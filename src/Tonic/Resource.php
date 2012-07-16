@@ -29,6 +29,16 @@ class Resource
     }
 
     /**
+     * Determine if a URL parameter as defined by this resource and its URI has been provided
+     * @param  str $name Name of the parameter
+     * @return bool
+     */
+    public function __isset($name)
+    {
+        return isset($this->params[$name]);
+    }
+
+    /**
      * Execute the resource, that is, find the correct resource method to call
      * based upon the request and then call it.
      *
